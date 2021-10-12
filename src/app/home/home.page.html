@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Math Game
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,27 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-card-header>        
+        <ion-card-title>Instructions</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>     
+        <p style="text-align: justify;">
+          This game allows you to measure your agility in basic mathematical operations. 
+          the game generates operations randomly and you must respond in the shortest possible time. 
+          You have 1o seconds to answer each operation, in case of exceeding the time the game will end. 
+          Good luck!
+        </p>   
+        
+      </ion-card-content>
+    </ion-card>
+    <strong>Ready to play game?</strong>
+    <p>
+      <ion-button>
+        <ion-icon slot="start" name="star"></ion-icon>
+        Play Game
+      </ion-button>
+    </p>   
   </div>
 </ion-content>
