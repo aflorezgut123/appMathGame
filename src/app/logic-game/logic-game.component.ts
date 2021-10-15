@@ -42,7 +42,7 @@ export class LogicGameComponent implements OnInit {
 
   generateOperator(){
     this.result='';  
-    this.chars = '+-*/';   
+    this.chars = '+-';   
     this.n = this.chars.length;
     for (let i = 0; i < this.n; i++){
     this.result += this.chars.charAt(Math.floor(Math.random() * this.chars.length));
@@ -67,7 +67,7 @@ export class LogicGameComponent implements OnInit {
       this.contador += 1;
     }
     this.ngOnInit();
-    // document.getElementById("inputTotal").innerText="0";
+    document.getElementById("inputTotal").focus();
   }
 
   resultOperator(first: number, second: number, mathOperator: string){   
