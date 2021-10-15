@@ -7,6 +7,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./logic-game.component.scss'],
 })
 export class LogicGameComponent implements OnInit {
+  
   async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -32,24 +33,32 @@ export class LogicGameComponent implements OnInit {
   n: number;
   chars: string;
   result: string;
-
+  totalOperator: number;
 
   ngOnInit() {
-    this.firstValue = Math.floor(Math.random()*101);
-    this.secondValue = Math.floor(Math.random()*101);
-    this.result = '';
-    this.chars = '+-*/'
-   
+    this.generateOperator();
+    this.generateValues();    
+  }
+
+  generateOperator(){
+    this.result='';  
+    this.chars = '+-*/';   
     this.n = this.chars.length;
     for (let i = 0; i < this.n; i++){
     this.result += this.chars.charAt(Math.floor(Math.random() * this.chars.length));
-    }
-    this.result=this.result.substring(0,1);
+    }    
+    this.result=this.result.substring(0,1);    
+  }
+
+  generateValues(){
+    this.firstValue = Math.floor(Math.random()*101);
+    this.secondValue = Math.floor(Math.random()*101);
   }
   
   valite(){
     this.value = parseFloat((document.getElementById("inputTotal") as HTMLInputElement).value);
-    this.total =this.firstValue - this.secondValue;
+    this.resultOperator(this.firstValue,this.secondValue,this.result);
+    this.total =this.totalOperator;
     this.presentAlert();
     console.log(this.result);
     if (this.total==this.value) {
@@ -60,4 +69,20 @@ export class LogicGameComponent implements OnInit {
     }
   }
 
+  resultOperator(first: number, second: number, mathOperator: string){   
+    switch(mathOperator){
+      case '+':
+        this.totalOperator = first+second;
+        break;
+      case '-':
+        this.totalOperator = first-second;
+        break;
+      case '*':
+        this.totalOperator = first*second;    
+        break;
+      case '/':
+        this.totalOperator = first/second;
+        break;  
+    }    
+  }
 }
