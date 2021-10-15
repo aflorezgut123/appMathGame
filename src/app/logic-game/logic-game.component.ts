@@ -12,7 +12,7 @@ export class LogicGameComponent implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Operacion suma/resta*',
-      subHeader: 'resultado',
+      subHeader:`${this.firstValue}`+'-'+`${this.secondValue}`,
       message: `La respuesta correcta es ${this.total}`,
       buttons: ['OK']
     });
@@ -61,12 +61,14 @@ export class LogicGameComponent implements OnInit {
     this.total =this.totalOperator;
     this.presentAlert();
     console.log(this.result);
-    if (this.total==this.value) {
+    if (this.total===this.value) {
       this.contador += 1;
     } 
     else{
       this.contador -= 1;
     }
+    this.ngOnInit();
+    // document.getElementById("inputTotal").innerHTML="";
   }
 
   resultOperator(first: number, second: number, mathOperator: string){   
