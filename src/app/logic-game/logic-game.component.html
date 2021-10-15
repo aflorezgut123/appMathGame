@@ -1,12 +1,22 @@
 <div id="container">
   <ion-card>
     <ion-card-header>        
-      <ion-card-title>Operation</ion-card-title>      
+      <ion-card-title color="blue">Operation</ion-card-title>      
     </ion-card-header>
   
-    <ion-card-content>
-     {{firstValue}} + {{secondValue}}                   
+    <ion-card-content  color="blue">
+      <h2>
+     {{firstValue}} {{result}} {{secondValue}}                   
+    </h2>
+     <ion-item>
+      <ion-label position="floating" > Ingrese su respuesta</ion-label>
+      <ion-input id="inputTotal"></ion-input>
+    </ion-item>
     </ion-card-content>
+
+<!-- Colors -->
+<ion-button shape="round" color="success" id="validate" name="validate" (click)="valite()">Validar</ion-button>
+    
   </ion-card>
   <ion-card>
     <ion-card-content>     
@@ -34,4 +44,7 @@
       
     </ion-card-content>
   </ion-card>
+  <!-- Anchor -->
+<ion-button href="#">Volver</ion-button>
+
 </div>  
