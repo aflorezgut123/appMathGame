@@ -34,6 +34,7 @@ export class LogicGameComponent implements OnInit {
   }
 
   async presentAlert() {
+    this.pauseTimer();
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Game Over',
@@ -43,8 +44,7 @@ export class LogicGameComponent implements OnInit {
     });    
     await alert.present();   
     this.router.navigate(['/home']);
-    const { role } = await alert.onDidDismiss();    
-    this.pauseTimer();   
+    const { role } = await alert.onDidDismiss();           
   }
 
   startTimer() {
