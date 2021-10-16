@@ -1,50 +1,37 @@
-<div id="container">
+<div id="container">  
+    <ion-card>
+      <ion-button>
+        <ion-icon name="alarm-outline"></ion-icon>{{timeLeft}} Seconds Left....
+      </ion-button>
+    </ion-card>
+  
+  <ion-card>  
+    <ion-card-content>     
+      <h2>Your Score: {{contador}}</h2>      
+    </ion-card-content>
+  </ion-card>  
   <ion-card>
     <ion-card-header>        
-      <ion-card-title color="blue">Operation</ion-card-title>      
+      <ion-card-title style="text-align: center;"><h1>Math Operation</h1></ion-card-title>      
     </ion-card-header>
   
-    <ion-card-content  color="blue">
-      <h2>
+    <ion-card-content style="text-align: center;">
+      <h1>
      {{firstValue}} {{result}} {{secondValue}}                   
-    </h2>
+    </h1>
      <ion-item>
-      <ion-label position="floating" > Ingrese su respuesta</ion-label>
-      <ion-input id="inputTotal"></ion-input>
+      <ion-label position="floating" > Type your answer here</ion-label>
+      <ion-input id="inputTotal" type="number"></ion-input>
     </ion-item>
     </ion-card-content>
-
-<!-- Colors -->
-<ion-button shape="round" color="success" id="validate" name="validate" (click)="valite()">Validar</ion-button>
-<strong>{{contador}}</strong>
+  <center>
+    <ion-button  shape="round" color="success" id="validate" name="validate" (click)="valite()">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      Send
+    </ion-button>
+  </center>
   </ion-card>
   <ion-card>
-    <ion-card-content>     
-      <p style="text-align: justify;">
-        This game allows you to measure your agility in basic mathematical operations. 
-        the game generates operations randomly and you must respond in the shortest possible time. 
-        You have 1o seconds to answer each operation, in case of exceeding the time the game will end. 
-        Good luck!
-      </p>   
-      
-    </ion-card-content>
+    <ion-button href="#" ><ion-icon name="arrow-back-circle-outline"></ion-icon>Return Home</ion-button>
   </ion-card>
-  <ion-card>
-    <ion-card-header>        
-      <ion-card-title>Time</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>     
-      <p style="text-align: justify;">
-        This game allows you to measure your agility in basic mathematical operations. 
-        the game generates operations randomly and you must respond in the shortest possible time. 
-        You have 1o seconds to answer each operation, in case of exceeding the time the game will end. 
-        Good luck!
-      </p>   
-      
-    </ion-card-content>
-  </ion-card>
-  <!-- Anchor -->
-<ion-button href="#">Volver</ion-button>
-
 </div>  
